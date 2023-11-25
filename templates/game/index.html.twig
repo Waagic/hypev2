@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jeux - HYPE.{% endblock %}
+
+{% block content %}
+    <div class="w-full mx-5">
+        <h1>JEUX.</h1>
+        <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">
+            <legend class="boxTitle">Wishlist.</legend>
+            <div class="p-5 flex">
+                {% for gameNotDone in gamesNotDone %}
+                    {% include('game/game-card.html.twig') with {'game': gameNotDone} %}
+                {% endfor %}
+            </div>
+        </fieldset>
+        <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">
+            <legend class="boxTitle">Backlog.</legend>
+            <div class="p-5 flex">
+                {% for gameDone in gamesDone %}
+                    {% include('game/game-card.html.twig') with {'game': gameDone} %}
+                {% endfor %}
+            </div>
+        </fieldset>
+    </div>
+{% endblock %}

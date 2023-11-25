@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "styles/global";
+
+@font-face {
+  font-family: 'Kilimanjaro';
+  src: url('fonts/kilimanjaro-regular.otf'),
+  format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Remboy';
+  src: url('fonts/RemboyRegular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CrimsonPro';
+  src: url('fonts/CrimsonPro.ttf');
+  font-weight: normal;
+  font-style: normal;
+}

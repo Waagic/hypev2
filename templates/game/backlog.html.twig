@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Backlog jeux - HYPE.{% endblock %}
+
+{% block content %}
+    <div class="w-full mx-5">
+        <h1>Backlog jeux.</h1>
+        {% for key, value in games %}
+            {% if value %}
+            <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">
+                <legend class="boxTitle">{{ key }}.</legend>
+                <div class="p-5 flex">
+                    {% for game in value %}
+                        {% include('game/game-card.html.twig') with {'game': game} %}
+                    {% endfor %}
+                </div>
+            </fieldset>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
