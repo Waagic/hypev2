@@ -1,11 +1,14 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    {% include 'common/header.html.twig' with {'height': 'h-screen', 'title': game.title} %}
+{% endblock %}
+
 {% block title %}{{ game.title }} - HYPE.{% endblock %}
 
 {% block content %}
     <div class="mx-5 w-full flex flex-col items-center text-textColor">
         <div class="flex items-center">
-            <h1>{{ game.title }}</h1>
             <div class="ml-3">
                 <a class="js-done" data-no-swup href="{{ path('app_game_done', {slug: game.slug}) }}">{% include('icons/done.html.twig') with {'done': game.done} %}</a>
             </div>

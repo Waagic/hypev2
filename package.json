@@ -16,6 +16,9 @@
     },
     "dependencies": {
         "@studio-freight/lenis": "^1.0.28",
+        "@swup/scroll-plugin": "^3.3.1",
+        "gsap": "^3.12.2",
+        "swup": "^4.4.4",
         "vue": "^3.3.8"
     }
 }

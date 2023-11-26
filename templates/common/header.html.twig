@@ -1,0 +1,10 @@
+<div class="transition-header header relative flex flex-col items-center">
+    <a data-swup-animation="header-small" class="absolute left-10 top-10 z-10 font-title text-5xl" href="{{ path('app_home') }}">H<span class="text-orange">.</span></a>
+    <h1 class="transition-header-title absolute top-1/2 z-10">
+        {{ title }}<span class="text-orange">.</span>
+    </h1>
+    <div class="transition-header-content w-full {{ height }} relative">
+        <div class="transition-header-bg absolute w-full h-full bg-gradient-to-t from-dark to-transparent"></div>
+        <img class="w-full h-full object-cover" src="{{ asset("assets/images/"~cover) }}" alt=""/>
+    </div>
+</div>

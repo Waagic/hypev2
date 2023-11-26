@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    {% include 'common/header.html.twig' with {'height': 'h-[500px]', 'title': 'hype'} %}
+{% endblock %}
+
 {% block title %}HYPE.{% endblock %}
 
 {% block content %}

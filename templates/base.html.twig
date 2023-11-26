@@ -11,20 +11,15 @@
         {{ vite_entry_script_tags('app') }}
     {% endblock %}
 </head>
-<body class="font-body text-2xl text-textColor bg-dark h-screen">
-    <div class="header relative flex flex-col items-center">
-        <a href="{{ path('app_home') }}" class="font-title text-7xl absolute top-1/2 z-10">HYPE<span
-                    class="text-orange">.</span></a>
-        <div class="w-full h-[500px] relative">
-            <div class="absolute w-full h-full bg-gradient-to-t from-dark to-transparent"></div>
-            <img class="w-full h-full object-cover" src="{{ asset("assets/images/"~cover) }}" alt=""/>
+<body class="font-body text-2xl text-textColor bg-dark">
+<main id="swup">
+    {% block header %}{% endblock %}
+    <div class="flex w-full">
+        {% include '/common/menu.html.twig' %}
+        <div class="transition-fade w-full mx-5">
+            {% block content %}{% endblock %}
         </div>
     </div>
-    <div class="flex w-full">
-        {% include '/menu/menu.html.twig' %}
-        <main class="w-full mx-5">
-            {% block content %}{% endblock %}
-        </main>
-    </div>
+</main>
 </body>
 </html>
