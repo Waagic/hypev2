@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    {% include 'common/header.html.twig' with {'height': 'h-[500px]', 'title' : 'jeux'} %}
+{% endblock %}
+
 {% block title %}Jeux - HYPE.{% endblock %}
 
 {% block content %}
-    <div class="w-full mx-5">
-        <h1>JEUX.</h1>
+    <div class="w-full">
         <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">
             <legend class="boxTitle">Wishlist.</legend>
             <div class="p-5 flex">
