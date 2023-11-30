@@ -29,6 +29,20 @@ class MovieFixtures extends Fixture
         $movie1->setMonth(9);
         $movie1->setSlug($this->slugify->generate($movie1->getTitle()));
         $manager->persist($movie1);
+        $movie2 = new Movie();
+        $movie2->setTitle('Bottoms');
+        $movie2->setRealisateur('Emma Seligman');
+        $movie2->setCasting('Rachel Sennott, Ruby Cruz, Havana Rose Liu, Ayo Edebiri, Kaia Gerber');
+        $movie2->setSynopsis("Les meilleures amies impopulaires, PJ et Josie, créent un club de combat au lycée pour rencontrer des filles et perdre leur virginité. Elles se retrouvent vite dépassés lorsque les étudiants les plus populaires commencent à se battre au nom de la légitime défense.");
+        $movie2->setPicture('bottoms-picture.jpg');
+        $movie2->setPoster('bottoms-poster.jpg');
+        $movie2->setMedia('vH5NAahf76s');
+        $movie2->setLink('https://letterboxd.com/film/bottoms/');
+        $movie2->setSeen(1);
+        $movie2->setLiked(1);
+        $movie2->setMonth(10);
+        $movie2->setSlug($this->slugify->generate($movie2->getTitle()));
+        $manager->persist($movie2);
         $manager->flush();
     }
 }
