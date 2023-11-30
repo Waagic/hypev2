@@ -18,6 +18,9 @@ export default {
       titleAlt: ['Remboy', 'sans-serif'],
       body: ['CrimsonPro', 'sans-serif'],
     },
+    screen: {
+      'xxl': '1440px',
+    },
     extend: {},
   },
   plugins: [],

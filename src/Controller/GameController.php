@@ -73,8 +73,7 @@ class GameController extends AbstractController
     public function show(Game $game): Response
     {
         return $this->render('game/show.html.twig', [
-            'game' => $game,
-            'cover' => $game->getImage()
+            'game' => $game
         ]);
     }
 

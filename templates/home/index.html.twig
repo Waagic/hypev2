@@ -8,22 +8,37 @@
 
 {% block content %}
     <div>
-        <div>
-            <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">
-                <legend class="font-title text-5xl text-textColor ml-5 px-2">DERNIERS JEUX.</legend>
-                <div class="p-5 flex">
-                    {% for game in games %}
-                        {% include('game/game-card.html.twig') with {'game': game} %}
-                    {% endfor %}
+        <div class="flex">
+            <fieldset class="border-2 border-opacity-50 border-orange rounded my-10 w-1/2">
+                <legend class="font-title text-5xl text-textColor ml-5 px-2">JEUX.</legend>
+                <div class="p-5 flex flex-col xl:flex-row">
+                    <div class="w-full">
+                        <div class="flex flex-wrap items-center">
+                            {% for game in games %}
+                                {% include('common/card.html.twig') with {'item': game, 'itemPath': 'app_game_show'} %}
+                            {% endfor %}
+                        </div>
+                    </div>
                 </div>
             </fieldset>
-            <fieldset class="border-2 border-opacity-50 border-orange rounded h-40 my-10">
+            <fieldset class="border-2 border-opacity-50 border-orange rounded my-10 w-1/2 ml-10">
                 <legend class="font-title text-5xl text-textColor ml-5 px-2">DERNIERS FILMS.</legend>
+                <div class="p-5 flex flex-col xl:flex-row">
+                    <div class="w-full">
+                        <div class="flex flex-wrap items-center">
+                            {% for movie in movies %}
+                                {% include('common/card.html.twig') with {'item': movie, 'itemPath': 'app_movie_show'} %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
             </fieldset>
-            <fieldset class="border-2 border-opacity-50 border-orange rounded h-40 my-10">
+        </div>
+        <div class="flex justify-between">
+            <fieldset class="border-2 border-opacity-50 border-orange rounded h-40 my-10 w-1/2">
                 <legend class="font-title text-5xl text-textColor ml-5 px-2">DERNIERS ALBUMS.</legend>
             </fieldset>
-            <fieldset class="border-2 border-opacity-50 border-orange rounded h-40 my-10">
+            <fieldset class="border-2 border-opacity-50 border-orange rounded h-40 my-10 w-1/2 ml-10">
                 <legend class="font-title text-5xl text-textColor ml-5 px-2">DERNIERES SERIES.</legend>
             </fieldset>
         </div>
