@@ -1,10 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% block header %}
+    {% include 'common/header.html.twig' with {'height': 'h-[500px]', 'title' : 'backlog jeux'} %}
+{% endblock %}
+
 {% block title %}Backlog jeux - HYPE.{% endblock %}
 
 {% block content %}
-    <div class="w-full mx-5">
-        <h1>Backlog jeux.</h1>
+    <div class="w-full">
         {% for key, value in games %}
             {% if value %}
             <fieldset class="border-2 border-opacity-50 border-orange rounded my-10">

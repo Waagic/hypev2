@@ -155,6 +155,11 @@ class Game
 
     public function setDone(bool $done): static
     {
+        if($done) {
+            $this->month = date('m');
+        } else {
+            $this->month = 0;
+        }
         $this->done = $done;
 
         return $this;
