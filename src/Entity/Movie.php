@@ -2,12 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\GameRepository;
+use App\Repository\MovieRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: GameRepository::class)]
-class Game
+#[ORM\Entity(repositoryClass: MovieRepository::class)]
+class Movie
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -17,29 +17,26 @@ class Game
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
+    #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
-    private ?string $description = null;
+    private ?string $casting = null;
 
     #[ORM\Column(length: 255, nullable: true)]
-    private ?string $link = null;
+    private ?string $realisateur = null;
 
-    #[ORM\Column(nullable: true)]
-    private ?float $price = null;
-
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $type = null;
+    #[ORM\Column(type: Types::TEXT, nullable: true)]
+    private ?string $synopsis = null;
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $media = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $slug = null;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $link = null;
 
     #[ORM\Column]
-    private ?bool $done = null;
+    private ?bool $seen = null;
 
     #[ORM\Column]
     private ?bool $liked = null;
@@ -49,6 +46,9 @@ class Game
 
     #[ORM\Column(length: 255)]
     private ?string $poster = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $slug = null;
 
     public function getId(): ?int
     {
@@ -72,57 +72,45 @@ class Game
         return $this->picture;
     }
 
-    public function setPicture(?string $picture): static
+    public function setPicture(string $picture): static
     {
         $this->picture = $picture;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getCasting(): ?string
     {
-        return $this->description;
+        return $this->casting;
     }
 
-    public function setDescription(?string $description): static
+    public function setCasting(?string $casting): static
     {
-        $this->description = $description;
+        $this->casting = $casting;
 
         return $this;
     }
 
-    public function getLink(): ?string
+    public function getRealisateur(): ?string
     {
-        return $this->link;
+        return $this->realisateur;
     }
 
-    public function setLink(?string $link): static
+    public function setRealisateur(?string $realisateur): static
     {
-        $this->link = $link;
+        $this->realisateur = $realisateur;
 
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getSynopsis(): ?string
     {
-        return $this->price;
+        return $this->synopsis;
     }
 
-    public function setPrice(?float $price): static
+    public function setSynopsis(?string $synopsis): static
     {
-        $this->price = $price;
-
-        return $this;
-    }
-
-    public function getType(): ?string
-    {
-        return $this->type;
-    }
-
-    public function setType(?string $type): static
-    {
-        $this->type = $type;
+        $this->synopsis = $synopsis;
 
         return $this;
     }
@@ -139,31 +127,26 @@ class Game
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getLink(): ?string
     {
-        return $this->slug;
+        return $this->link;
     }
 
-    public function setSlug(string $slug): static
+    public function setLink(?string $link): static
     {
-        $this->slug = $slug;
+        $this->link = $link;
 
         return $this;
     }
 
-    public function isDone(): ?bool
+    public function isSeen(): ?bool
     {
-        return $this->done;
+        return $this->seen;
     }
 
-    public function setDone(bool $done): static
+    public function setSeen(bool $seen): static
     {
-        if($done) {
-            $this->month = date('m');
-        } else {
-            $this->month = 0;
-        }
-        $this->done = $done;
+        $this->seen = $seen;
 
         return $this;
     }
@@ -200,6 +183,18 @@ class Game
     public function setPoster(string $poster): static
     {
         $this->poster = $poster;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): static
+    {
+        $this->slug = $slug;
 
         return $this;
     }

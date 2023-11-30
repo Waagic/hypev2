@@ -17,12 +17,13 @@ class GameFixtures extends Fixture
     {
         $game1 = new Game();
         $game1->setTitle('Elden Ring');
-        $game1->setImage('elden-ring.jpg');
+        $game1->setPicture('elden-ring-picture.jpg');
+        $game1->setPoster('elden-ring-poster.jpg');
         $game1->setLink('https://store.steampowered.com/app/1245620/ELDEN_RING/');
         $game1->setDescription("UNE NOUVELLE AVENTURE GRANDIOSE VOUS ATTEND Levez-vous, Sans-éclat, et puisse la grâce guider vos pas. Brandissez la puissance du Cercle d'Elden. Devenez Seigneur de l'Entre-terre.");
         $game1->setPrice(59.99);
         $game1->setType('Souls like / RPG / Open World');
-        $game1->setVideo('E3Huy2cdih0');
+        $game1->setMedia('E3Huy2cdih0');
         $game1->setDone(1);
         $game1->setLiked(1);
         $game1->setMonth(1);
@@ -30,12 +31,13 @@ class GameFixtures extends Fixture
         $manager->persist($game1);
         $game2 = new Game();
         $game2->setTitle('Against the Storm');
-        $game2->setImage('against-the-storm.jpg');
+        $game2->setPicture('against-the-storm-picture.jpg');
+        $game2->setPoster('against-the-storm-poster.jpeg');
         $game2->setLink('https://store.steampowered.com/app/1336490/Against_the_Storm/');
         $game2->setDescription("Un simulateur de ville fantastique, dans lequel vous devez reconstruire la civilisation sous une pluie apocalyptique. En tant qu'émissaire de la reine, menez les humains, les castors, les lézards, les renards et les harpies pour assurer un avenir aux derniers survivants.");
         $game2->setPrice(19.49);
         $game2->setType('Stratégie / Gestion / Roguelite');
-        $game2->setVideo('FsuCV86Pf5Y');
+        $game2->setMedia('FsuCV86Pf5Y');
         $game2->setDone(0);
         $game2->setLiked(0);
         $game2->setMonth(2);
@@ -43,12 +45,13 @@ class GameFixtures extends Fixture
         $manager->persist($game2);
         $game3 = new Game();
         $game3->setTitle('Astral Ascent');
-        $game3->setImage('astral-ascent.png');
+        $game3->setPicture('astral-ascent-picture.png');
+        $game3->setPoster('astral-ascent-poster.jpg');
         $game3->setLink('https://store.steampowered.com/app/1280930/Astral_Ascent/');
         $game3->setDescription("Choisissez un des 4 personnages et explorez le Jardin, une prison astrale gardée par 12 puissants boss : les Zodiaques. Pour les affronter, vous devrez dénicher et maîtriser des douzaines de sorts uniques dans ce jeu de plate-forme rogue-lite aux combats ultra rapides et satisfaisants.");
         $game3->setPrice(24.50);
         $game3->setType('Action / Roguelike');
-        $game3->setVideo('5HSZqRCNBLI');
+        $game3->setMedia('5HSZqRCNBLI');
         $game3->setDone(0);
         $game3->setLiked(0);
         $game3->setMonth(3);
