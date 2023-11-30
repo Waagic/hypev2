@@ -22,7 +22,7 @@ class GameController extends AbstractController
         return $this->render('game/index.html.twig', [
             'gamesDone' => $gameRepository->getDone(),
             'gamesNotDone' => $gameRepository->getNotDone(),
-            'cover' => $cover['image']
+            'picture' => $cover['picture']
         ]);
     }
 

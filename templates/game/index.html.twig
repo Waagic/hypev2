@@ -12,7 +12,7 @@
             <legend class="boxTitle">Wishlist.</legend>
             <div class="p-5 flex">
                 {% for gameNotDone in gamesNotDone %}
-                    {% include('game/game-card.html.twig') with {'game': gameNotDone} %}
+                    {% include('common/card.html.twig') with {'item': gameNotDone, 'itemPath': 'app_game_show'} %}
                 {% endfor %}
             </div>
         </fieldset>
@@ -20,7 +20,7 @@
             <legend class="boxTitle">Backlog.</legend>
             <div class="p-5 flex">
                 {% for gameDone in gamesDone %}
-                    {% include('game/game-card.html.twig') with {'game': gameDone} %}
+                    {% include('common/card.html.twig') with {'item': gameDone, 'itemPath': 'app_game_show'} %}
                 {% endfor %}
             </div>
         </fieldset>
